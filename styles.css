@@ -1,0 +1,415 @@
+/* ==========================================================
+   Faith Masilane | Portfolio stylesheet
+   Palette: ink navy, cool paper, deep teal, marigold
+   Type: Sora (headings) + Source Sans 3 (body)
+   ========================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap");
+
+:root {
+  --ink: #14213d;
+  --ink-soft: #4a566e;
+  --paper: #f3f6f8;
+  --card: #ffffff;
+  --line: #d5dde5;
+  --teal: #0e7c86;
+  --teal-dark: #0a5e66;
+  --marigold: #f2b134;
+
+  --font-head: "Sora", "Segoe UI", Arial, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+
+  --radius: 10px;
+  --content: 860px;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 4.5rem; /* keeps headings clear of the sticky nav */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--teal);
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--teal-dark);
+}
+
+:focus-visible {
+  outline: 3px solid var(--marigold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Headings ---------- */
+h1,
+h2,
+h3 {
+  font-family: var(--font-head);
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--marigold);
+  display: inline-block;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+h1 i,
+h2 i,
+h3 i {
+  font-style: normal; /* the HTML wraps headings in <i>; keep them upright */
+}
+
+p {
+  margin: 0 0 1rem;
+  max-width: 68ch;
+}
+
+/* ---------- Dividers ---------- */
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--line);
+  max-width: var(--content);
+  margin: 0 auto;
+}
+
+/* ---------- Navigation ---------- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--ink);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  justify-content: center;
+}
+
+nav a {
+  display: block;
+  padding: 0.4rem 0.8rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  background: var(--teal);
+  color: #ffffff;
+}
+
+/* ---------- Sections ---------- */
+section {
+  max-width: var(--content);
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem;
+}
+
+/* ---------- Home (hero) ---------- */
+#home {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  column-gap: 2.5rem;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+#home img {
+  grid-row: 1 / span 2;
+  width: 280px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--card);
+  box-shadow: 0 0 0 3px var(--teal);
+}
+
+#home h1 {
+  align-self: end;
+}
+
+#home p {
+  align-self: start;
+  color: var(--ink-soft);
+  font-size: 1.2rem;
+}
+
+/* ---------- About ---------- */
+#about img {
+  width: 300px;
+  margin-top: 1.5rem;
+  border-radius: var(--radius);
+}
+
+/* ---------- Skills ---------- */
+#skills ul {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+#skills li {
+  padding: 0.35rem 0.9rem;
+  background: var(--card);
+  border: 1px solid var(--teal);
+  border-radius: 999px;
+  color: var(--teal-dark);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ---------- Projects ---------- */
+article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--teal);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+article h3 {
+  margin-top: 0;
+}
+
+article img {
+  width: 100%;
+  max-width: 420px;
+  margin: 0.5rem 0 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+}
+
+article > a {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  background: var(--teal);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+article > a:hover {
+  background: var(--teal-dark);
+  color: #ffffff;
+}
+
+/* ---------- Education ---------- */
+#education img {
+  width: 300px;
+  margin: 0.5rem 0 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+}
+
+/* ---------- Certifications ---------- */
+#certifications h3 {
+  padding-left: 0.75rem;
+  border-left: 4px solid var(--marigold);
+}
+
+/* ---------- Contact ---------- */
+#contact h1 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--marigold);
+  display: inline-block;
+}
+
+#contact p a {
+  font-weight: 600;
+}
+
+/* CV button */
+.cv-button {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  padding: 0.7rem 1.4rem;
+  background: var(--marigold);
+  color: var(--ink);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}
+
+.cv-button:hover {
+  background: #e0a021;
+}
+
+/* ---------- Contact form ---------- */
+form {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  max-width: 560px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  margin: 0.25rem 0 1rem;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: 3px solid var(--marigold);
+  border-color: var(--teal);
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="submit"] {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  padding: 0.7rem 1.6rem;
+  background: var(--teal);
+  color: #ffffff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: var(--teal-dark);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--ink);
+  color: #c9d2de;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.95rem;
+}
+
+footer p {
+  margin: 0 auto;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 700px) {
+  #home {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  #home img {
+    grid-row: auto;
+    width: 200px;
+    margin-bottom: 1.5rem;
+  }
+
+  #home h1,
+  #home p {
+    align-self: auto;
+  }
+
+  section {
+    padding: 2.5rem 1rem;
+  }
+
+  nav ul {
+    justify-content: flex-start;
+  }
+#skills li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.6rem;
+  background: var(--card);
+  border: 1px solid var(--teal);
+  border-radius: 999px;
+  color: var(--teal-dark);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+#skills li img,
+#skills li svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+
+}
