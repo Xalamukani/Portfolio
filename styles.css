@@ -24,6 +24,7 @@
 }
 
 /* ---------- Base ---------- */
+
 *,
 *::before,
 *::after {
@@ -220,7 +221,7 @@ section {
 article {
   background: var(--card);
   border: 1px solid var(--line);
-  border-left: 5px solid var(--teal);
+  
   border-radius: var(--radius);
   padding: 1.5rem;
   margin-top: 1.5rem;
@@ -262,9 +263,10 @@ article > a:hover {
 }
 
 /* ---------- Certifications ---------- */
+
 #certifications h3 {
   padding-left: 0.75rem;
-  border-left: 4px solid var(--marigold);
+  
 }
 
 /* ---------- Contact ---------- */
@@ -363,7 +365,7 @@ footer p {
 }
 
 /* ---------- Mobile ---------- */
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   #home {
     grid-template-columns: 1fr;
     text-align: center;
@@ -412,4 +414,4 @@ footer p {
 }
 
 
-}
+} */
